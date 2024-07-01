@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100 rounded-2xl">
+    <div className="navbar bg-base-100 px-5 rounded-2xl border">
       <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -40,8 +40,11 @@ function Navbar() {
             </li> */}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-4xl font-bold font-serif italic text-info">
-         FN
+        <Link
+          to="/"
+          className="btn btn-ghost text-4xl font-bold font-serif italic text-info"
+        >
+          FN
         </Link>
       </div>
       <div className="navbar-center hidden rounded-2xl lg:flex">
