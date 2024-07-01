@@ -28,7 +28,10 @@ function Login() {
     <div className="auth-container">
       <div className="auth-left"></div>
       <div className="auth-right">
-        <Form method="post" className="flex flex-col gap-5 w-[400px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.5)]">
+        <Form
+          method="post"
+          className="flex flex-col gap-5 max-w-[550px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.5)]"
+        >
           <h1 className="text-4xl font-semibold text-center">Login</h1>
           <FormInput
             label="Email :"

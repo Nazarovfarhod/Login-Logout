@@ -30,7 +30,7 @@ function Register() {
       <div className="auth-right">
         <Form
           method="post"
-          className="flex flex-col gap-3 w-[400px] shadow-2xl p-7 rounded-xl bg-[rgba(255,255,255,0.5)]"
+          className="flex flex-col gap-3 max-w-[550px] shadow-2xl p-7 rounded-xl bg-[rgba(255,255,255,0.5)]"
         >
           <h1 className="text-4xl font-semibold text-center">Register</h1>
           <FormInput
