@@ -4,7 +4,10 @@ import { Navbar } from "../components";
 function MainLayout() {
   return (
     <div>
-      <Navbar />
+      <header className="m-5 shadow-lg">
+        {" "}
+        <Navbar />
+      </header>
 
       <main className="px-10">
         <Outlet />

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100  px-5 rounded-2xl ">
+    <div className="navbar bg-base-100  px-5 rounded-2xl">
       <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,15 +45,15 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar-center hidden rounded-2xl lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
+        <ul className="menu menu-horizontal px-1  flex gap-5">
+          <li className="text-xl font-medium font-serif">
             <Link to="/">Home</Link>
           </li>
 
-          <li>
+          <li className="text-xl font-medium font-serif">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="text-xl font-medium font-serif">
             <Link to="/contact">Contact</Link>
           </li>
 
@@ -63,7 +63,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn">
+        <Link to="/login" className="btn font-serif text-xl font-medium">
           Logout
         </Link>
       </div>
