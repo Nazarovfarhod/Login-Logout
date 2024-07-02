@@ -5,7 +5,6 @@ import { useEffect } from "react";
 //components
 import { FormInput } from "../components";
 
-
 //Action
 export const action = async ({ request }) => {
   let formData = await request.formData();
@@ -22,7 +21,7 @@ import { useRegister } from "../hooks/useRegister";
 function Register() {
   const farxod = useActionData();
 
-  const {isPanding, registerWithGoogle} = useRegister()
+  const { isPanding, registerWithGoogle } = useRegister();
 
   useEffect(() => {
     if (farxod) {
@@ -64,14 +63,15 @@ function Register() {
             placeholder="Password"
           />
           <div className="mt-6">
-            <button className="btn btn-primary btn-block font-bold">
+            <button className="btn btn-info  border-red-400 btn-block font-bold">
               Register
             </button>
           </div>
           <div>
-            <button onClick={registerWithGoogle}
+            <button
+              onClick={registerWithGoogle}
               type="button"
-              className="btn btn-secondary btn-block font-bold"
+              className="btn bg-green-300 border-red-400 btn-block font-bold"
             >
               Google
             </button>
