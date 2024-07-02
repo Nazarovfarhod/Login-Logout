@@ -16,8 +16,14 @@ export const action = async ({ request }) => {
   return { displayName, photoURL, email, password };
 };
 
+//custom hooks
+import { useRegister } from "../hooks/useRegister";
+
 function Register() {
   const farxod = useActionData();
+
+  const {isPanding, registerWithGoogle} = useRegister()
+
   useEffect(() => {
     if (farxod) {
       console.log(farxod);
@@ -63,7 +69,7 @@ function Register() {
             </button>
           </div>
           <div>
-            <button
+            <button onClick={registerWithGoogle}
               type="button"
               className="btn btn-secondary btn-block font-bold"
             >

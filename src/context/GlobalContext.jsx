@@ -27,7 +27,7 @@ function GlobalContextProvider({ children }) {
     totalPrice: 0,
   });
 
-  dispatch({ type: "", payload: "" });
+  // dispatch({ type: "", payload: "" });
   return (
     <GlobalContext.Provider value={{ ...state, dispatch }}>
       {children}
