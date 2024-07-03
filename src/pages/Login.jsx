@@ -16,11 +16,20 @@ export const action = async ({ request }) => {
   return { email, password };
 };
 
+//custom hooks
+import { useRegister } from "../hooks/useRegister";
+import { useLogin } from "../hooks/useLogin";
+
 function Login() {
   const farxod = useActionData();
+
+  const { isPanding, registerWithGoogle } = useRegister();
+
+  const { isPanding: isPandingLogin, signIn } = useLogin();
+
   useEffect(() => {
     if (farxod) {
-      console.log(farxod);
+      signIn(farxod.email, farxod.password);
     }
   }, [farxod]);
 
@@ -46,17 +55,40 @@ function Login() {
             placeholder="Password"
           />
           <div>
-            <button className="btn btn-primary btn-block font-bold">
-              Login
-            </button>
+            {isPandingLogin && (
+              <button
+                disabled
+                type="button"
+                className="btn btn-primary btn-block font-bold"
+              >
+                Loading...
+              </button>
+            )}
+            {!isPandingLogin && (
+              <button className="btn btn-primary btn-block font-bold">
+                Login
+              </button>
+            )}
           </div>
           <div>
-            <button
-              type="button"
-              className="btn btn-secondary btn-block font-bold"
-            >
-              Google
-            </button>
+            {isPanding && (
+              <button
+                disabled
+                type="button"
+                className="btn bg-green-300 border-red-400 btn-block font-bold"
+              >
+                Loading...
+              </button>
+            )}
+            {!isPanding && (
+              <button
+                onClick={registerWithGoogle}
+                type="button"
+                className="btn bg-green-300 border-red-400 btn-block font-bold"
+              >
+                Google
+              </button>
+            )}
           </div>
 
           <div className="text-center">

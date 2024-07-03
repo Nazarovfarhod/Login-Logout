@@ -21,11 +21,17 @@ import { useRegister } from "../hooks/useRegister";
 function Register() {
   const farxod = useActionData();
 
-  const { isPanding, registerWithGoogle } = useRegister();
+  const { isPanding, registerWithGoogle, registerEmailAndPassword } =
+    useRegister();
 
   useEffect(() => {
     if (farxod) {
-      console.log(farxod);
+      registerEmailAndPassword(
+        farxod.email,
+        farxod.password,
+        farxod.displayName,
+        farxod.photoURL
+      );
     }
   }, [farxod]);
 
@@ -63,18 +69,35 @@ function Register() {
             placeholder="Password"
           />
           <div className="mt-6">
-            <button className="btn btn-info  border-red-400 btn-block font-bold">
-              Register
-            </button>
+            {isPanding && (
+              <button disabled className="btn btn-info  border-red-400 btn-block font-bold">
+                Loading...
+              </button>
+            )}
+            {!isPanding && (
+              <button className="btn btn-info  border-red-400 btn-block font-bold">
+                Register
+              </button>
+            )}
           </div>
           <div>
-            <button
-              onClick={registerWithGoogle}
-              type="button"
-              className="btn bg-green-300 border-red-400 btn-block font-bold"
-            >
-              Google
-            </button>
+            {isPanding && (
+              <button disabled
+                type="button"
+                className="btn bg-green-300 border-red-400 btn-block font-bold"
+              >
+                Loading...
+              </button>
+            )}
+            {!isPanding && (
+              <button
+                onClick={registerWithGoogle}
+                type="button"
+                className="btn bg-green-300 border-red-400 btn-block font-bold"
+              >
+                Google
+              </button>
+            )}
           </div>
 
           <div className="text-center">
