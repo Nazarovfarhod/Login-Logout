@@ -1,11 +1,35 @@
-import React from "react";
+//components
+import ProductsList from "../components/ProductsList";
+
+//costun Fetch
+import { customFetch } from "../utils";
+//import react
+import { useState } from "react";
+
+//Loader
+export const loader = async () => {
+  const requset = await customFetch();
+  const products = requset.data;
+
+  return { products };
+};
 
 function Home() {
-  // console.log(efa);
-  return <div className="w-full text-center">
-    <h2 className="mb-5 text-3xl font-semibold">Home</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, pariatur iusto! Sequi, quam consequuntur cum error perspiciatis omnis ab nam porro laborum ipsum, tenetur facere earum tempore saepe rem! Aperiam eligendi molestias excepturi quidem quaerat velit animi perspiciatis eos quas et reprehenderit officiis vel assumenda, earum placeat alias repudiandae non.</p>
-  </div>;
+  const [withibleProduct, setWithibleProduct] = useState(8);
+  return (
+    <div className="w-full">
+      <ProductsList withibleProduct={withibleProduct} />
+      <div className="flex justify-center my-10">
+        {" "}
+        <button
+          className="btn btn-info"
+          onClick={withibleProduct == 32?() => setWithibleProduct(8): () => setWithibleProduct((prev) => prev + 8)}
+        >
+          {withibleProduct == 32 ? "See Less " : "See More"}
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

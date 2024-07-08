@@ -35,11 +35,10 @@ function Login() {
 
   return (
     <div className="auth-container">
-      <div className="auth-left"></div>
-      <div className="auth-right">
+      <div className="auth-bg-login auth-right">
         <Form
           method="post"
-          className="flex flex-col gap-5 w-[340px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.5)]"
+          className="flex flex-col gap-5 w-[340px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.6)]"
         >
           <h1 className="text-4xl font-semibold text-center">Login</h1>
           <FormInput
@@ -54,6 +53,7 @@ function Login() {
             name="password"
             placeholder="Password"
           />
+          
           <div>
             {isPandingLogin && (
               <button
@@ -92,7 +92,7 @@ function Login() {
           </div>
 
           <div className="text-center">
-            <p className="text-black font-medium lg:text-slate-400">
+            <p className="font-medium text-slate-500">
               If you don't have account,{" "}
               <Link className="link link-primary" to="/register">
                 Register

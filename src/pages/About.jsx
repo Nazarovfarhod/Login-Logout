@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="w-full text-center">
+    <div className="w-full text-center h-lvh">
       <h2 className="mb-5 text-3xl font-semibold">About</h2>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
