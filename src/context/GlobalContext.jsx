@@ -95,6 +95,12 @@ function GlobalContextProvider({ children }) {
     dispatch({ type: "ADD_PRODUCT", payload: products });
   };
 
+  // delete
+  const handleDelete = (id) => {
+    const filteredProducts = state.products.filter((prod) => prod.id !== id);
+    dispatch({ type: "ADD_PRODUCT", payload: filteredProducts });
+  };
+
   useEffect(() => {
     localStorage.setItem("my-store", JSON.stringify(state));
   }, [state]);
@@ -130,6 +136,7 @@ function GlobalContextProvider({ children }) {
         addToCart,
         incrementAmount,
         decrementAmount,
+        handleDelete,
       }}
     >
       {children}

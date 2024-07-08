@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar bg-base-100 pb-0 px-0 sticky top-0 z-20 rounded-2xl border flex justify-between w-full">
+    <div className="navbar bg-base-100 pb-0 px-0 rounded-2xl border flex justify-between w-full">
       <div className="navbar-start w-60 ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -4,7 +4,7 @@ import { Navbar } from "../components";
 function MainLayout() {
   return (
     <div className="bg-slate-300 h-full py-1">
-      <header className="m-2 mb-10 shadow-lg rounded-2xl">
+      <header className="m-2 mb-10 sticky top-0 z-20 shadow-lg rounded-2xl">
         {" "}
         <Navbar />
       </header>

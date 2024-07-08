@@ -4,7 +4,7 @@ import { FaTrashCan } from "react-icons/fa6";
 import { useGlobalContext } from "../hooks/useGlobalContext";
 
 function TableItem({ product }) {
-  const { incrementAmount, decrementAmount } = useGlobalContext();
+  const { incrementAmount, decrementAmount, handleDelete } = useGlobalContext();
   return (
     <tr>
       <th>
@@ -51,7 +51,9 @@ function TableItem({ product }) {
           >
             +
           </button>
-          <p>{product.amount}</p>
+          <p>
+            {product.amount == 0 ? handleDelete(product.id) : product.amount}
+          </p>
           <button
             disabled={product.amount == 0 && true}
             onClick={() => decrementAmount(product.id)}
@@ -62,7 +64,10 @@ function TableItem({ product }) {
         </div>
       </td>
       <th>
-        <button className="btn btn-neutral transition-colors hover:text-red-500 hover:btn-ghost ">
+        <button
+          onClick={() => handleDelete(product.id)}
+          className="btn btn-neutral transition-colors hover:text-red-500 hover:btn-ghost "
+        >
           {" "}
           <FaTrashCan className="w-4 h-4" />
         </button>
