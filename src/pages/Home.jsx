@@ -22,7 +22,7 @@ function Home() {
       <div className="flex justify-center my-10">
         {" "}
         <button
-          className="btn btn-info"
+          className="btn btn-info px-10 tracking-[2px]"
           onClick={withibleProduct == 32?() => setWithibleProduct(8): () => setWithibleProduct((prev) => prev + 8)}
         >
           {withibleProduct == 32 ? "See Less " : "See More"}

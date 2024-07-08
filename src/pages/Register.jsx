@@ -12,6 +12,7 @@ export const action = async ({ request }) => {
   let photoURL = formData.get("photoURL");
   let email = formData.get("email");
   let password = formData.get("password");
+  let confirmpassword = formData.get("confirmpassword");
   return { displayName, photoURL, email, password };
 };
 
@@ -30,7 +31,8 @@ function Register() {
         farxod.email,
         farxod.password,
         farxod.displayName,
-        farxod.photoURL
+        farxod.photoURL,
+        farxod.confirmpassword
       );
     }
   }, [farxod]);
@@ -65,6 +67,12 @@ function Register() {
             label="Password :"
             type="password"
             name="password"
+            placeholder="Password"
+          />
+          <FormInput
+            label="Confirm Password* :"
+            type="password"
+            name="confirmpassword"
             placeholder="Password"
           />
           <div className="mt-6">

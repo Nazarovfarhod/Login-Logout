@@ -53,7 +53,17 @@ function Login() {
             name="password"
             placeholder="Password"
           />
-          
+          <div className="form-control flex items-center">
+            <label className="cursor-pointer flex gap-1">
+              <input
+                type="checkbox"
+                defaultChecked
+                className="checkbox checkbox-secondary w-4 h-4"
+              />
+              <span className="text-[10px] mr-16 ">Remember Password</span>
+            <span className="text-[10px] text-primary">Forgot password?</span>
+            </label>
+          </div>
           <div>
             {isPandingLogin && (
               <button

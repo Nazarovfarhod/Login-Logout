@@ -40,16 +40,26 @@ export const useRegister = () => {
     email,
     password,
     displayName,
-    photoURL
+    photoURL,
+    confirmpassword
   ) => {
     try {
-      const register = createUserWithEmailAndPassword(auth, email, password);
+      if (confirmpassword !== password) {
+        throw new Error("Passwords did not match");
+      }
+      const register = createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+
       setIsPanding(true);
       const user = (await register).user;
       await updateProfile(auth.currentUser, {
         photoURL,
         displayName,
       });
+
       dispatch({ type: "LOG_IN", payload: user });
       toast.success(`Welcome, ${user.displayName}`);
       setIsPanding(false);
