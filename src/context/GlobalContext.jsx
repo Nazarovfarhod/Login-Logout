@@ -126,7 +126,9 @@ function GlobalContextProvider({ children }) {
 
     state.products.forEach((product) => {
       totalCount = totalCount + product.amount;
-      allPrice = totalCount * product.price;
+      allPrice =
+        totalCount * product.price -
+        (product.price * product.discountPercentage) / 100;
     });
 
     dispatch({ type: "TOTAL_PRICE", payload: allPrice });
