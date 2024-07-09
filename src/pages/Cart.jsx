@@ -38,7 +38,7 @@ function Cart() {
             <tr>
               <th></th>
               <th>Title</th>
-              <th>Total Price</th>
+              <th>Total Price ${totalPrice.toFixed(2)}</th>
               <th>Change Amount</th>
               <th>
                 {" "}
