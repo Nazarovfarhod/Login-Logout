@@ -32,6 +32,8 @@ const changeState = (state, action) => {
       return { ...state, products: payload };
     case "TOTAL_PRODUCT_ADD":
       return { ...state, totalProducts: payload };
+    case "TOTAL_PRICE":
+      return { ...state, totalPrice: payload };
     default:
       return state;
   }
@@ -120,11 +122,14 @@ function GlobalContextProvider({ children }) {
 
   useEffect(() => {
     let totalCount = 0;
+    let allPrice = 0;
 
     state.products.forEach((product) => {
       totalCount = totalCount + product.amount;
+      allPrice = totalCount * product.price;
     });
 
+    dispatch({ type: "TOTAL_PRICE", payload: allPrice });
     dispatch({ type: "TOTAL_PRODUCT_ADD", payload: totalCount });
     // console.log(state);
   }, [state.products]);

@@ -119,7 +119,9 @@ function Navbar() {
                   {" "}
                   {totalProducts} All Products
                 </span>
-                <span className="text-info">Total Price: {totalPrice} </span>
+                <span className="text-info">
+                  Total Price:$ {totalPrice.toFixed(2)}{" "}
+                </span>
                 <div className="card-actions">
                   <Link to="/cart" className="btn btn-primary btn-block">
                     View cart

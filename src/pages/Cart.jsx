@@ -6,10 +6,6 @@ import { TableItem } from "../components";
 
 function Cart() {
   const { products, totalProducts, totalPrice, addToCard } = useGlobalContext();
-
-  products.map((product) => {
-    return product;
-  });
   return (
     <div className="h-lvh">
       <div className="overflow-x-auto card glass px-7 pt-5 pb-2">
@@ -42,7 +38,7 @@ function Cart() {
             <tr>
               <th></th>
               <th>Title</th>
-              <th>Total Price {totalPrice} </th>
+              <th>Total Price</th>
               <th>Change Amount</th>
               <th>
                 {" "}
