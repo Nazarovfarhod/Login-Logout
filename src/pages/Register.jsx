@@ -13,7 +13,7 @@ export const action = async ({ request }) => {
   let email = formData.get("email");
   let password = formData.get("password");
   let confirmpassword = formData.get("confirmpassword");
-  return { displayName, photoURL, email, password };
+  return { displayName, photoURL, email, password, confirmpassword };
 };
 
 //custom hooks
@@ -91,15 +91,6 @@ function Register() {
             )}
           </div>
           <div>
-            {isPanding && (
-              <button
-                disabled
-                type="button"
-                className="btn bg-green-300 border-red-400 btn-block font-bold"
-              >
-                Loading...
-              </button>
-            )}
             {!isPanding && (
               <button
                 onClick={registerWithGoogle}

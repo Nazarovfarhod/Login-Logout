@@ -47,11 +47,7 @@ export const useRegister = () => {
       if (confirmpassword !== password) {
         throw new Error("Passwords did not match");
       }
-      const register = createUserWithEmailAndPassword(
-        auth,
-        email,
-        password,
-      );
+      const register = createUserWithEmailAndPassword(auth, email, password);
 
       setIsPanding(true);
       const user = (await register).user;
