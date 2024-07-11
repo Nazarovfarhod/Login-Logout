@@ -16,9 +16,12 @@ export const action = async ({ request }) => {
   return { email, password };
 };
 
+import { sendPasswordResetEmail } from "firebase/auth";
+
 //custom hooks
 import { useRegister } from "../hooks/useRegister";
 import { useLogin } from "../hooks/useLogin";
+import { auth } from "../firebase/firebaseConfig";
 
 function Login() {
   const farxod = useActionData();
@@ -61,7 +64,7 @@ function Login() {
                 className="checkbox checkbox-secondary w-4 h-4"
               />
               <span className="text-[10px] mr-16 ">Remember Password</span>
-            <span className="text-[10px] text-primary">Forgot password?</span>
+            <button onClick={()=> {sendPasswordResetEmail(auth, email)}} className="text-[10px] text-primary">Forgot password?</button>
             </label>
           </div>
           <div>

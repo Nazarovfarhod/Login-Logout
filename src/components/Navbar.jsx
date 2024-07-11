@@ -53,14 +53,6 @@ function Navbar() {
             <li>
               <Link to="/todoList">Creat new Todo</Link>
             </li>
-            <li>
-              <button
-                onClick={signOutProfile}
-                className=" font-serif text-lg bg-red-300 font-semibold"
-              >
-                Logout
-              </button>
-            </li>
           </ul>
         </div>
         <Link
@@ -137,25 +129,41 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div className="flex pr-0 w-40 lg:flex-col gap-3 items-center">
-          <div className="avatar">
-            <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-              <img src={user.photoURL} />
+        <div className="flex pr-5 w-20 lg:flex-col items-center">
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-20 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+              </div>
             </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-60 p-2 shadow"
+            >
+              <li>
+                <small className="text-[10px] pb-0">email:</small>
+                <p className="justify-between font-medium pt-0">{user.email}</p>
+              </li>
+              <li>
+                <small className="text-[10px] pb-0">full name :</small>
+                <p className="capitalize font-semibold font-serif mb-3">
+                  {user.displayName}{" "}
+                </p>
+              </li>
+              <li>
+                <button
+                  onClick={signOutProfile}
+                  className=" font-serif text-lg bg-red-300 font-semibold"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
           </div>
-          <div>
-            <p className="flex w-full font-medium capitalize text-center">
-              {user.displayName}
-            </p>
-          </div>
-        </div>
-        <div className="navbar-end">
-          <button
-            onClick={signOutProfile}
-            className="hidden lg:btn font-serif text-xl font-medium"
-          >
-            Logout
-          </button>
         </div>
       </div>
     </div>
