@@ -16,10 +16,12 @@ import {
   ErrorPage,
   SingleProduct,
   Cart,
+  TodoList,
 } from "./pages";
 //actions
 import { action as RegisterAction } from "./pages/Register";
 import { action as LoginAction } from "./pages/Login";
+import { action as TodosAction } from "./pages/TodoList";
 //Loaders
 import { loader as HomeLoader } from "./pages/Home";
 import { loader as SingleProductLoader } from "./pages/SingleProduct";
@@ -67,6 +69,11 @@ function App() {
         {
           path: "cart",
           element: <Cart />,
+        },
+        {
+          path: "todoList",
+          element: <TodoList />,
+          action: TodosAction,
         },
       ],
     },

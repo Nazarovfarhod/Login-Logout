@@ -51,6 +51,9 @@ function Navbar() {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
+              <Link to="/todoList">Creat new Todo</Link>
+            </li>
+            <li>
               <button
                 onClick={signOutProfile}
                 className=" font-serif text-lg bg-red-300 font-semibold"
@@ -78,6 +81,9 @@ function Navbar() {
           </li>
           <li className="text-xl font-medium font-serif">
             <Link to="/contact">Contact</Link>
+          </li>
+          <li className="text-xl font-medium font-serif">
+            <Link to="/todoList">Create new Todo</Link>
           </li>
         </ul>
       </div>

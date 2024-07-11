@@ -8,6 +8,6 @@ import { Toaster } from "react-hot-toast";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <GlobalContextProvider>
     <App />
-    <Toaster />
+    <Toaster position="top-right" />
   </GlobalContextProvider>
 );
