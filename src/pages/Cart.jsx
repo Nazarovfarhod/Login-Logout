@@ -1,15 +1,19 @@
 //context
 import { useGlobalContext } from "../hooks/useGlobalContext";
-
+//images
+import Empty from "../assets/empty.svg";
 //components
 import { TableItem } from "../components";
 
 function Cart() {
   const { products, totalProducts, totalPrice, addToCard } = useGlobalContext();
-  if(products.length === 0) {
+  if (products.length === 0) {
     return (
-      <h4 className="h-lvh flex items-center justify-center">404</h4>
-    )
+      <div className="flex items-center text-6xl tracking-[2px] font-bold font-serif gap-32">
+        <img src={Empty} alt="" />
+        <h2>No products available 😒</h2>
+      </div>
+    );
   }
   return (
     <div className="h-lvh">
