@@ -6,6 +6,11 @@ import { TableItem } from "../components";
 
 function Cart() {
   const { products, totalProducts, totalPrice, addToCard } = useGlobalContext();
+  if(products.length === 0) {
+    return (
+      <h4 className="h-lvh flex items-center justify-center">404</h4>
+    )
+  }
   return (
     <div className="h-lvh">
       <div className="overflow-x-auto card glass px-7 pt-5 pb-2">

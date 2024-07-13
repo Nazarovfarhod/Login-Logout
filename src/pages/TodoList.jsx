@@ -82,7 +82,7 @@ function TodoList() {
   }, [dataTodo]);
 
   return (
-    <div className="container max-mx-auto min-h-[600px] bg-slate-200 rounded-xl p-5">
+    <div className="container max-mx-auto min-h-[600px]  rounded-xl p-5">
       {data &&
         data.map((todo) => {
           return (

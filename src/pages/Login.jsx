@@ -81,7 +81,7 @@ function Login() {
         <Form
           // onSubmit={() => handleSubmit(input)}
           method="post"
-          className="flex flex-col gap-5 w-[340px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.6)]"
+          className="flex flex-col gap-2 w-[340px] shadow-2xl p-7 rounded-xl  bg-[rgba(255,255,255,0.6)]"
         >
           <h1 className="text-4xl font-semibold text-center">
             {showPassword ? "Login" : "Reset Password"}{" "}
