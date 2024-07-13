@@ -1,11 +1,11 @@
+//import from rrd
 import { Link } from "react-router-dom";
-
 //global cotext
 import { useGlobalContext } from "../hooks/useGlobalContext";
-
 //firebase
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
+//Toaster
 import toast from "react-hot-toast";
 
 function Navbar() {

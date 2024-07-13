@@ -20,22 +20,22 @@ export const action = async ({ request }) => {
 import { useRegister } from "../hooks/useRegister";
 
 function Register() {
-  const farxod = useActionData();
+  const userData = useActionData();
 
   const { isPanding, registerWithGoogle, registerEmailAndPassword } =
     useRegister();
 
   useEffect(() => {
-    if (farxod) {
+    if (userData) {
       registerEmailAndPassword(
-        farxod.email,
-        farxod.password,
-        farxod.displayName,
-        farxod.photoURL,
-        farxod.confirmpassword
+        userData.email,
+        userData.password,
+        userData.displayName,
+        userData.photoURL,
+        userData.confirmpassword
       );
     }
-  }, [farxod]);
+  }, [userData]);
 
   return (
     <div className="auth-container">
